@@ -1,24 +1,28 @@
 #site,
 #form ,
-#form-section{
+#form-section,
+#my-header {
     display: grid;
 }
 #site {
     grid-template-rows: repeat(6, auto);
 }
-#my-header ,
+#my-header {
+    grid-template-columns: repeat(2, 1fr);
+}
 #nav-list,
 #nav-list ul {
     display: flex;
 }
-#my-header {
-    justify-content: space-between;
+#nav-list {
+    justify-content: center;
 }
 #nav-list ul  {
     align-self: center;
+    width: 100%;
+    justify-content: space-around;
 }
 #form-section {
-    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
 }
 #title-section ,
@@ -26,6 +30,17 @@
     grid-column-start: span 3;
     justify-self: center;
 }
+#title-section {
+    align-self: center;
+}
+#form,
+#form-section {
+    grid-template-rows: repeat(2, 1fr);
+}
+#form {
+    row-gap: 8px;
+}
+
  
 
 #title img {
