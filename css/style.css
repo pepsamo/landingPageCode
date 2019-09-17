@@ -1,0 +1,35 @@
+#site,
+#form ,
+#form-section{
+    display: grid;
+}
+#site {
+    grid-template-rows: repeat(6, auto);
+}
+#my-header ,
+#nav-list,
+#nav-list ul {
+    display: flex;
+}
+#my-header {
+    justify-content: space-between;
+}
+#nav-list ul  {
+    align-self: center;
+}
+#form-section {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+#title-section ,
+#form{
+    grid-column-start: span 3;
+    justify-self: center;
+}
+ 
+
+#title img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
