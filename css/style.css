@@ -1,76 +1,128 @@
 #site,
-#form ,
+#form,
 #form-section,
-#my-header  {
-    display: grid;
+#my-header,
+#features-section,
+#pricing-section {
+  display: grid;
 }
+
 #nav-list {
-    justify-content: center;
+  justify-content: center;
 }
-#nav-list ul  {
-    align-self: center;
-    justify-content: space-around;
+
+#nav-list ul {
+  align-self: center;
+  justify-content: space-around;
 }
 
 #title-section {
-    align-self: center;
+  align-self: center;
 }
 
 #form {
-    row-gap: 8px;
+  row-gap: 8px;
 }
+
 #title {
-    grid-column-start: span 2;
-    padding: 16px;
-    justify-self: center;
+  grid-column-start: span 2;
+  padding: 16px;
+  justify-self: center;
 }
 
 #title img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+#features-section,
+#pricing-section {
+    grid-template-columns: repeat(3, 33.33vw);
+    grid-template-rows: repeat(3, 1fr);
+}
+.element,
+.price-element {
+    grid-column-start: span 3;
+}
+#features-section .element:nth-child(2),
+#pricing-section .price-element:nth-child(2) {
+    grid-row-start: 2;
+}
+#features-section .element:nth-child(3),
+#pricing-section .price-element:nth-child(3) {
+    grid-row-start: 3;
+}
+
+/* Smartphone (Portrait)*/
+@media only screen and (max-width : 360px) {
+  #my-header {
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: 8vh 1fr;
   }
 
-  /* Smartphone (Portrait)*/
-  @media only screen and (max-width : 360px) {
-      #my-header {
-        grid-template-columns: repeat(2, 50vw);
-        grid-template-rows: 8vh 1fr;
-      }
-      #nav-list {
-        width: 100vw;
-    }
-    #nav-list ul  {
-        display: inline;
-        width: 80%;
-        margin: auto;
-        text-align: center;
-    }
-    #nav-list ul li {
-        padding-bottom: 8px;
-    }
+  #nav-list {
+    width: 100vw;
   }
-/*Desktop and laptops*/
-  @media only screen  and (min-width : 1224px) {
-    #site {
-        grid-template-rows: repeat(6, auto);
-    }
-    #my-header {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    #nav-list ul {
-        width: 100%;
-    }
-    #form-section {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    #title-section ,
-    #form{
-        grid-column-start: span 3;
-        justify-self: center;
-    }
-    #form,
-#form-section {
-    grid-template-rows: repeat(2, 1fr);
+
+  #nav-list ul {
+    display: inline;
+    width: 80%;
+    margin: auto;
+  }
+  #nav-list ul,
+  #features-section {
+    text-align: center;
+  }
+
+  #nav-list ul li {
+    padding-bottom: 8px;
+  }
+
+  #form-section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 15vh;
+  }
+
+  #title-section {
+    grid-column-start: span 2;
+  }
+
+  #form {
+    grid-row-start: 2;
+    grid-column-start: span 2;
+    display: grid;
+  }
+  .element i {
+      display: none;
+  }
 }
-    }
+
+/*Desktop and laptops*/
+@media only screen and (min-width : 1224px) {
+  #site {
+    grid-template-rows: repeat(6, auto);
+  }
+
+  #my-header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #nav-list ul {
+    width: 100%;
+  }
+
+  #form-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #title-section,
+  #form {
+    grid-column-start: span 3;
+    justify-self: center;
+  }
+
+  #form,
+  #form-section {
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
