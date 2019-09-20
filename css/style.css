@@ -4,16 +4,11 @@
 #my-header  {
     display: grid;
 }
-#my-header {
-    grid-template-columns: repeat(2, 50vw);
-}
-
 #nav-list {
     justify-content: center;
 }
 #nav-list ul  {
     align-self: center;
-    width: 100%;
     justify-content: space-around;
 }
 
@@ -26,9 +21,9 @@
 }
 #title {
     grid-column-start: span 2;
+    padding: 16px;
+    justify-self: center;
 }
-
- 
 
 #title img {
     width: 100%;
@@ -37,12 +32,22 @@
   }
 
   /* Smartphone (Portrait)*/
-  @media only screen and (max-width : 320px) {
+  @media only screen and (max-width : 360px) {
       #my-header {
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(2, 50vw);
+        grid-template-rows: 8vh 1fr;
       }
+      #nav-list {
+        width: 100vw;
+    }
     #nav-list ul  {
         display: inline;
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+    #nav-list ul li {
+        padding-bottom: 8px;
     }
   }
 /*Desktop and laptops*/
@@ -52,6 +57,9 @@
     }
     #my-header {
         grid-template-columns: repeat(2, 1fr);
+    }
+    #nav-list ul {
+        width: 100%;
     }
     #form-section {
         grid-template-columns: repeat(3, 1fr);
