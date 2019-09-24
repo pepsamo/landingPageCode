@@ -1,9 +1,4 @@
-#site,
-#form,
-#form-section,
-#my-header,
-#features-section,
-#pricing-section {
+.grid-style {
   display: grid;
 }
 
